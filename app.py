@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, send_file
+from flask import Flask, request, jsonify, send_file, render_template
 import os
 from src.process_image import process_image
 
@@ -10,6 +10,9 @@ OUTPUT_FOLDER = "processed"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
+@app.route("/upload")
+def upload():
+    return render_template("upload.html")
 @app.route("/process", methods=["POST"])
 def process():
     # Check if file is provided
