@@ -4,13 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Processing</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        /* Container for form */
+        .container {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 90%;
+        }
+
+        /* Header styling */
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #4CAF50;
+        }
+
+        /* Label styling */
+        label {
+            font-size: 16px;
+            display: block;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        /* File input styling */
+        input[type="file"] {
+            display: block;
+            margin: 10px auto 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+            background: #fff;
+        }
+
+        /* Button styling */
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 20px;
+            }
+
+            button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Upload an Image for Super-Resolution and Inpainting</h1>
-    <form action="http://127.0.0.1:5000/process" method="post" enctype="multipart/form-data">
-        <label for="file">Select an Image:</label>
-        <input type="file" id="file" name="file" accept="image/*" required>
-        <button type="submit">Process Image</button>
-    </form>
+    <div class="container">
+        <h1>Upload an Image for Super-Resolution and Inpainting</h1>
+        <form action="http://127.0.0.1:5000/process" method="post" enctype="multipart/form-data">
+            <label for="file">Select an Image:</label>
+            <input type="file" id="file" name="file" accept="image/*" required>
+            <button type="submit">Process Image</button>
+        </form>
+    </div>
 </body>
 </html>

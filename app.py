@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify, send_file, render_template
 import os
-from src.process_image import process_image
+from src.process_image import process_image1
 
 app = Flask(__name__)
 
@@ -29,7 +29,7 @@ def process():
 
     # Process image
     try:
-        output_path = process_image(input_path, OUTPUT_FOLDER, sr_method="bicubic", inpaint_method="telea")
+        output_path = process_image1(input_path, OUTPUT_FOLDER, sr_method="bicubic", inpaint_method="telea")
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
